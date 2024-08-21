@@ -13,16 +13,8 @@
 #ifndef CLAPTRAP_HPP
 #define CLAPTRAP_HPP
 
-#include <string> //std::string
-#include <iostream> //std::cout, std::endl
-//#include <stdio.h>
-
-#define GREEN "\033[0;92m"
-#define RED "\033[0;31m"
-#define AQUAMARINE "\033[0;96m"
-#define MAGENTA "\033[0;95m"
-#define YELLOW "\033[0;93m"
-#define RESET_COLOR "\033[0m"
+#include "all.hpp"
+#include <string>
 
 class ClapTrap
 {
@@ -36,11 +28,12 @@ class ClapTrap
     public:
         ClapTrap(void); //Default constructor
         ClapTrap(std::string name);
+        ClapTrap(std::string name, int hit_points, int energy_points, int attack_damage);
         ClapTrap(const ClapTrap &copy);
         ~ClapTrap(void); //Destructor
         void attack (const std::string& target);
         void takeDamage (unsigned int amount);
-        void beRepaired (unsigned int amount); //Hit points
+        void beRepaired (unsigned int amount);
         std::string getName(void){ return(_name);}
         int getHitPoints(void){return (_hit_points);};
         void increaseHitPoints(unsigned int amount){
@@ -49,7 +42,6 @@ class ClapTrap
         void decreaseHitPoints(unsigned int amount){_hit_points = _hit_points - amount;}
         int getEnergyPoints(void) {return (_energy_points);};
         void decreaseEnergyPoints(unsigned int amount){_energy_points = _energy_points - amount;}
-        int getAttackDamage(void){return(_attack_damage);};
 };
 
 #endif
