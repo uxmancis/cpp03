@@ -15,11 +15,11 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address
 
 # Source files and object files
-SRC = src/main.cpp src/ClapTrap.cpp src/ScavTrap.cpp
+SRC = src/main.cpp src/ClapTrap.cpp src/ScavTrap.cpp src/FragTrap.cpp
 OBJ = $(SRC:.cpp=.o)
 
 # Executable name
-NAME = hot_chocolate_betrayal
+NAME = uxuwis_hot_chocolate_hero
 
 # Make all rule
 all: $(NAME)
